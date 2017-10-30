@@ -4,9 +4,9 @@ import tornado.web
 class MainHandler(tornado.web.RequestHandler):
     def initialize(self):
         self.write('begin init!')
-    def get_argument(self,name,age=''):
+    def get_argument(self,name):
         self.write(name)
-        self.write(age)
+        
 #     def get(self,name=''):
 #         self.write("hello world!\n")
 #         self.write(name)
