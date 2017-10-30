@@ -2,12 +2,13 @@ import tornado.ioloop
 import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write("hello world")
+    def get(self,name):
+        self.write("hello world!\n")
+        self.write(name)
         
 def make_app():
     return tornado.web.Application([
-        (r"/",MainHandler),
+        (r"/(\S+)",MainHandler),
         ])
     
     
