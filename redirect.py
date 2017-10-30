@@ -19,6 +19,7 @@ def make_app():
     return tornado.web.Application([
         (r"/maint",MaintHandler),
         (r"/?name=(\S+)&age=",MainHandler),
+        (r"/",MainHandler),
         ])
 
 if __name__=="__main__":
