@@ -10,6 +10,7 @@ class MainHandler(tornado.web.RequestHandler):
        
     def on_response(self,response):
         self.write(str(response.code))
+        self.finish()
         
 def make_app():
     return tornado.web.Application([
