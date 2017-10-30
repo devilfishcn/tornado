@@ -4,7 +4,7 @@ import tornado.web
 class MainHandler(tornado.web.RequestHandler):
     
     def get(self):
-        self.render("template/index.html")
+        self.render("template/index.html",name='wxf')
 def make_app():
     return tornado.web.Application([
         (r"/",MainHandler),
