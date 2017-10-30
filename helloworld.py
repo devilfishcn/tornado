@@ -4,7 +4,8 @@ import tornado.web
 class MainHandler(tornado.web.RequestHandler):
     def initialize(self):
         self.write('begin init!')
-    def get_argument(self,name):
+        
+    def get_query_argument(self,name):
         self.write(name)
         
 #     def get(self,name=''):
