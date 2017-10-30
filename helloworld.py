@@ -16,7 +16,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.write(age)
         self.write('\n')
         address={'xiaoqu':'shanyucheng'}
-        self.redirect('./template.html', address)
+        self.redirect('http://tornado.muxiulin.cn/static/template.html', address)
 def make_app():
     return tornado.web.Application([
         (r"/",MainHandler),
