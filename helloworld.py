@@ -8,6 +8,7 @@ class MainHandler(tornado.web.RequestHandler):
         
 def make_app():
     return tornado.web.Application([
+        (r"/",MainHandler),
         (r"/name=(\S+)&age=",MainHandler),
         ])
     
