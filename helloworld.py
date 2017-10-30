@@ -2,8 +2,15 @@ import tornado.ioloop
 import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
+    def initialize(self):
+        self.write('begin init!')
+        
     def get(self,name=''):
         self.write("hello world!\n")
+        self.write(name)
+        
+    def get_argument(self,name,age):
+        self.write(name)
         self.write(name)
         
 def make_app():
