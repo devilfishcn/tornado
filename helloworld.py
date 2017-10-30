@@ -15,14 +15,12 @@ class MainHandler(tornado.web.RequestHandler):
         age = self.get_argument('age')
         self.write(age)
         self.write('\n')
-        address={'xiaoqu':'shanyucheng'}
-        self.render('static/template.html', address)
 def make_app():
     return tornado.web.Application([
         (r"/",MainHandler),
         (r"/?name=(\S+)&age=",MainHandler),
-        ],
-        static_path='/root/github/tornado')
+        ])
+
 if __name__=="__main__":
     app=make_app()
     app.listen(8001,'127.0.0.1')
