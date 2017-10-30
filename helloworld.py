@@ -2,7 +2,7 @@ import tornado.ioloop
 import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
-    def get(self,name):
+    def get(self,name=None):
         self.write("hello world!\n")
         self.write(name)
         
