@@ -6,7 +6,7 @@ class MainHandler(tornado.web.RequestHandler):
     @tornado.gen.coroutine
     def get(self):
        http = tornado.httpclient.AsyncHTTPClient()
-       response = yield http.fetch('http://muxiulin.cn', callback=self.on_response)
+       response = yield http.fetch('http://muxiulin.cn')
        self.write(str(response.code))
    
 def make_app():
