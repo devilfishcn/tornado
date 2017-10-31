@@ -11,7 +11,7 @@ clients = dict()
 class  IndexHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
     def get(self):
-        self.render('index.html')
+        self.render('socket.html')
 class MyWebSocketHandler(tornado.websocket.WebSocketHandler):
     def open(self,*args):
         self.id= self.get_argument('id')
