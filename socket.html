@@ -15,7 +15,7 @@
 	function WebSocketTest(){
 		if("WebSocket" in window){
 			messageContainer.innerHTML ="WebSocket is supported by your Browser!";
-			var ws = new WebStocket("ws://tornado.muxiulin.cn/webstocket?Id=12345");
+			var ws = new WebSocket("ws://tornado.muxiulin.cn/webstocket?Id=12345");
 			ws.onopen =function(){ ws.send("Message to send");};
 			ws.onmessage = function(evt){
 				var received_msg =evt.data;
