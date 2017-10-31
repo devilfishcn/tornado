@@ -14,7 +14,7 @@ class  IndexHandler(tornado.web.RequestHandler):
         self.render('socket.html')
 class MyWebSocketHandler(tornado.websocket.WebSocketHandler):
     def open(self,*args):
-        self.id= self.get_argument('id')
+        self.id= self.get_argument('Id')
         self.stream.set_nodelay(True)
         clients[self.id]={"id":self.id,"object":self}
     def on_message(self,message):
