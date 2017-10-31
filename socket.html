@@ -22,7 +22,7 @@
 				messageContainer.innerHTML = messageContainer.innerHTML +"<br />Message is received :"+reveived_msg;
 			};
 			ws.onclose = function (){
-				essageContainer.innerHTML = messageContainer.innerHTML +"<br />Connection is closed ...";
+				messageContainer.innerHTML = messageContainer.innerHTML +"<br />Connection is closed ...";
 			};
 		}else{
 			messageContainer.innerHTML = "WebSocket not supported by your browser";
