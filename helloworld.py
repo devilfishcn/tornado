@@ -3,6 +3,10 @@ import tornado.ioloop
 import tornado.web
 import common
 from common import get_args_tuple
+from tornado.options import options,define
+
+define("port", default=8888, help="run on the given port", type=int)
+
 class MainHandler(tornado.web.RequestHandler):
     def initialize(self):
         self.write('begin init!') 
@@ -30,8 +34,9 @@ def make_app():
         ])
 
 if __name__=="__main__":
+    options.parse_command_line()
+
     app = make_app()
     HTTP_SERVER = tornado.httpserver.HTTPServer(app, xheaders=True)
-    HTTP_SERVER.listen(8989)
+    HTTP_SERVER.listen(options.port)
     tornado.ioloop.IOLoop.current().start()
-   
