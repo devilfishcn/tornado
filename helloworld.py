@@ -32,7 +32,7 @@ def make_app():
 if __name__=="__main__":
     app = make_app()
     HTTP_SERVER = tornado.httpserver.HTTPServer(app, xheaders=True)
-    HTTP_SERVER.bind(8080,'127.0.0.1')
-    HTTP_SERVER.bind(8081,'127.0.0.1')
-    HTTP_SERVER.bind(8082,'127.0.0.1')
+    HTTP_SERVER.bind(8080)
+    HTTP_SERVER.bind(8081)
+    HTTP_SERVER.bind(8082)
     tornado.ioloop.IOLoop.current().start()
