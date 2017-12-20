@@ -31,7 +31,7 @@ def make_app():
 
 if __name__=="__main__":
     app=make_app()
-    app.listen(8001,'127.0.0.1')
+#     app.listen(8001,'127.0.0.1')
     app.bind(8080,'127.0.0.1')
     app.bind(8081,'127.0.0.1')
     app.bind(8082,'127.0.0.1')
