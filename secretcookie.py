@@ -21,7 +21,6 @@ application=tornado.web.Application([
                         )
 def main():
     application.listen(8001)
-    print 10/0
     tornado.ioloop.IOLoop.current().start()
     
 if __name__=="__main__":

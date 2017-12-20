@@ -7,20 +7,29 @@
 # 1+1
 
 
-from threading import Timer  
-import time  
-  
-timer_interval=10  
+# from threading import Timer  
+# import time  
+#   
+# timer_interval=10  
+# 
+# class person():
+#     def __init__(self,name):
+#         self.name=name
+#         
+#     def say(self):  
+#         print 'i m ',self.name  
+# 
+# person=person('wxf')
+# 
+# t=Timer(timer_interval,person.say())  
+# t.start() 
+# t.setDaemon(True)
 
-class person():
-    def __init__(self,name):
-        self.name=name
-        
-    def say(self):  
-        print 'i m ',self.name  
+import tornado
+from tornado.ioloop import IOLoop
 
-person=person('wxf')
-
-t=Timer(timer_interval,person.say())  
-t.start() 
-t.setDaemon(True)
+@tornado.gen.coroutine
+def main():
+    print 'hello world'
+    
+IOLoop.current().run_sync(main)
